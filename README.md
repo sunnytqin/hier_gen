@@ -1,6 +1,18 @@
-# Hierarchical Generalization Training
+# Data Drives Unstable Hierarchical Generalization in LMs
 
-Minimal repository for training transformer models on question formation and tense inflection tasks.
+**Official Repository**
+
+This is the official code repository for the paper:
+
+**"Data Drives Unstable Hierarchical Generalization in LMs"**
+*Tian Qin, Naomi Saphra, David Alvarez-Melis*
+EMNLP 2025
+
+📄 [Paper](https://aclanthology.org/2025.emnlp-main.593/) | 🔗 [ACL Anthology](https://aclanthology.org/2025.emnlp-main.593/)
+
+## Overview
+
+This repository provides code for training transformer models on question formation and tense inflection tasks to study hierarchical generalization in language models. The code enables investigation of how training data complexity and diversity affect whether models learn hierarchical syntactic rules versus linear n-gram-like shortcuts.
 
 ## Setup
 
@@ -163,4 +175,27 @@ hier_gen/
 
 ## Citation
 
-If you use this code in your research, please cite the original work.
+If you use this code in your research, please cite our paper:
+
+```bibtex
+@inproceedings{qin-etal-2025-data,
+    title = "Data Drives Unstable Hierarchical Generalization in {LM}s",
+    author = "Qin, Tian  and
+      Saphra, Naomi  and
+      Alvarez-Melis, David",
+    editor = "Christodoulopoulos, Christos  and
+      Chakraborty, Tanmoy  and
+      Rose, Carolyn  and
+      Peng, Violet",
+    booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2025",
+    address = "Suzhou, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.emnlp-main.593/",
+    doi = "10.18653/v1/2025.emnlp-main.593",
+    pages = "11733--11751",
+    ISBN = "979-8-89176-332-6",
+    abstract = "Early in training, LMs can behave like n-gram models, but eventually, they often learn tree-based syntactic rules and generalize hierarchically out of distribution (OOD). We study this shift using controlled grammar-learning tasks: question formation and tense inflection. We find a model learns to generalize hierarchically if its training data is *complex*{--}in particular, if it includes center-embedded clauses, a special syntactic structure. Under this definition, complex data drives hierarchical rules, while less complex data encourages shortcut learning in the form of n-gram-like linear rules. Furthermore, we find that a model uses rules to generalize, whether hierarchical or linear, if its training data is *diverse*{--}in particular, if it includes many distinct syntax trees in the training set. Under this definition, diverse data promotes stable rule learning, whereas less diverse data promotes memorization of individual syntactic sequences. Finally, intermediate diversity and intermediate complexity form an *unstable regime*, which is characterized by oscillatory learning dynamics and inconsistent behaviors across random seeds. These results highlight the central role of training data in shaping generalization and explain why competing strategies can lead to unstable outcomes."
+}
+```
