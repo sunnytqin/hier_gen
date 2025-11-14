@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment
+.env
+.venv
+env/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Model checkpoints and outputs
+checkpoints/
+*.pth
+*.pkl
+*.pickle
+*.pt
+
+# SLURM outputs
+slurm_out/
+*.out
+*.err
+
+# Data (optional - uncomment if you want to exclude data files)
+# data_utils/*/
+
+# Logs
+wandb/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

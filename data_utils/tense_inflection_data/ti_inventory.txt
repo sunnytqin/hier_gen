@@ -1,0 +1,68 @@
+DATA_DIR = "/n/holyscratch01/dam_lab/sqin/concept_comp_data"
+
+Original data composition: 
+    PAST: 58816
+    PRESESENT: 
+        V: 16324 (39%)
+        PREP: 10839 (26%)
+        RC: 14021 (35%)
+D130 data composition:
+    PAST: 10000
+    PRESENT: 
+        V: 9000
+        PREP: 40500
+        PREP: 40500
+        
+tense_D100: keep the same past and present ratio, [PREP, RC]=0.5/0.5 # this is still the past/present ratio, in those examples, V belongs to PREP
+tense_D101: [PAST, PRESENT]=0.5/0.5, [PREP, RC]=0.05/0.95
+tense_D102: [PAST, PRESENT]=0.5/0.5, [PREP, RC]=0.1/0.9
+tense_D103: [PAST, PRESENT]=0.5/0.5, [PREP, RC]=0.2/0.8
+tense_D104: [PAST, PRESENT]=0.5/0.5, [PREP, RC]=0.3/0.7
+tense_D106: [PAST, PRESENT]=0.5/0.5, [PREP, RC]=0.7/0.3
+tense_D107: [PAST, PRESENT]=0.5/0.5, [PREP, RC]=0.8/0.2
+tense_D108: [PAST, PRESENT]=0.5/0.5, [PREP, RC]=0.9/0.1
+tense_D109: [PAST, PRESENT]=0.5/0.5, [PREP, RC]=0.95/0.05
+
+tense_D101_old: keep the same past and present ratio, [PREP, RC]=0.1/0.9
+tense_D109_old: keep the same past and present ratio, [PREP, RC]=0.9/0.1  
+
+tense_D110: [PAST, PRESENT]=0.5/0.5, present incldues RC and V, in origingal ratio
+tense_D111: [PAST, PRESENT]=0.1/0.9, present incldues RC and V, in origingal ratio
+tense_D112: [PAST, PRESENT]=0.2/0.8, present incldues RC and V, in origingal ratio
+tense_D113: [PAST, PRESENT]=0.3/0.7, present incldues RC and V, in origingal ratio
+tense_D114: [PAST, PRESENT]=0.4/0.6, present incldues RC and V, in origingal ratio
+tense_D116: [PAST, PRESENT]=0.6/0.4, present incldues RC and V, in origingal ratio # this is similar to original data
+tense_D117: [PAST, PRESENT]=0.7/0.3, present incldues RC and V, in origingal ratio
+tense_D118: [PAST, PRESENT]=0.8/0.2, present incldues RC and V, in origingal ratio
+tense_D119: [PAST, PRESENT]=0.9/0.1, present incldues RC and V, in origingal ratio
+
+
+tense_D120: past and present is 50/50, [V, PREP, RC]=0.5/0/0.5 # similar to tense_D110
+tense_D121: past and present is 50/50, [V, PREP, RC]=0.1/0/0.9 
+tense_D122: past and present is 50/50, [V, PREP, RC]=0.2/0/0.8 
+tense_D123: past and present is 50/50, [V, PREP, RC]=0.3/0/0.7 
+tense_D127: past and present is 50/50, [V, PREP, RC]=0.7/0/0.3 
+tense_D128: past and present is 50/50, [V, PREP, RC]=0.8/0/0.2 
+tense_D129: past and present is 50/50, [V, PREP, RC]=0.9/0/0.1 
+
+tense_D130: [PAST, PRESENT]=0.1/0.9, [V, PREP, RC]=0.1/0.45/0.45
+tense_D131: [PAST, PRESENT]=0.1/0.9, [V, PREP, RC]=0.1/0.045/0.855
+tense_D132: [PAST, PRESENT]=0.1/0.9, [V, PREP, RC]=0.1/0.09/0.81
+tense_D133: [PAST, PRESENT]=0.1/0.9, [V, PREP, RC]=0.1/0.18/0.72
+tense_D134: [PAST, PRESENT]=0.1/0.9, [V, PREP, RC]=0.1/0.27/0.63
+tense_D137: [PAST, PRESENT]=0.1/0.9, [V, PREP, RC]=0.1/0.72/0.18
+tense_D138: [PAST, PRESENT]=0.1/0.9, [V, PREP, RC]=0.1/0.81/0.09
+tense_D139: [PAST, PRESENT]=0.1/0.9, [V, PREP, RC]=0.1/0.855/0.045
+
+
+tense_D140: PRESENT only, [V, PREP, RC]= 0.05/0.05/0.9, [RC_sbj, RC_obj]=0.9/0.1
+tense_D141: PRESENT only, [V, PREP, RC]= 0.05/0.05/0.9, [RC_sbj, RC_obj]=0.1/0.9
+tense_D142: PRESENT only, [V, PREP, RC]= 0.05/0.05/0.9, [RC_sbj, RC_obj]=0.95/0.05
+tense_D143: PRESENT only, [V, PREP, RC]= 0.05/0.05/0.9, [RC_sbj, RC_obj]=0.05/0.95
+tense_D145: PRESENT only, [V, PREP, RC]= 0.05/0.05/0.9, [RC_sbj, RC_obj]=0.5/0.5 (neutral)
+    generation: python generate_ti_data_from_cfg.py --num_samples 100000 --present_only  --present_type_ratio 0.05,0.05,0.9 --rc_type_ratio 0.05,0.95
+
+
+scripts to generate data: 
+python generate_ti_data_from_cfg.py --num_samples 100000 --keep_present_ratio --past_ratio 0.5  --present_type_ratio 0.05,0.95
+python generate_ti_data_from_cfg.py --num_samples 100000 --keep_present_ratio --past_ratio 0.2  --present_type_ratio 0.0,1.0
