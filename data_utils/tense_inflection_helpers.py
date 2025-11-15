@@ -7,8 +7,7 @@ import random
 import os
 import numpy as np
 
-
-DATA_DIR = "/n/holyscratch01/dam_lab/sqin/concept_comp_data"
+DATA_DIR = "data_utils"
 # Determines whether the main verb of the sentence is correct
 ### target is first, pred is second
 def main_right_tense(senta, sentb):
