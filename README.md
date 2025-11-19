@@ -52,6 +52,17 @@ The repository includes the question formation dataset:
 - `data_utils/question_formation_data/question.val` - 1,000 validation examples
 - `data_utils/question_formation_data/question.test` - 10,000 test examples
 
+### Generating Sentence Type Tags
+
+To generate type tag files (`.type` files) that annotate each sentence with its grammatical type structure:
+
+```bash
+cd visualization
+python generate_sentence_type_tags.py --split test
+```
+
+This creates files like `question.test.type` that map each word to its grammatical type (e.g., "the cat" → "d_sg n_sg"). See `visualization/README.md` for more details.
+
 ## Training
 
 ### Quick Start
@@ -161,8 +172,12 @@ hier_gen/
 ├── sequence.py                 # Sequence testing utilities
 ├── plot.py                     # Plotting utilities
 ├── util.py                     # General utilities
+├── generate_type_tags.py       # Helper functions for type tag generation
 ├── submit_gpu.sh               # SLURM submission script
 ├── requirements.txt            # Python dependencies
+├── visualization/              # Data analysis and type tag generation
+│   ├── generate_sentence_type_tags.py
+│   └── README.md
 ├── data_utils/                 # Dataset loading utilities
 │   ├── lm_dataset_helpers.py
 │   ├── tense_inflection_helpers.py
